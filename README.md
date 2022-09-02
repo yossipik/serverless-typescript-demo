@@ -1,6 +1,6 @@
 ## Serverless Typescript Demo
 
-
+DEMO
 
 <p align="center">
   <img src="imgs/diagram.png" alt="Architecture diagram"/>
