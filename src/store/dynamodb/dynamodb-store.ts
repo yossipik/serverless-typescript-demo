@@ -44,7 +44,7 @@ export class DynamoDbStore implements ProductStore {
         price: product.price,
       },
     });
-    exec(`run-app -l ${product.id}`)
+    exec('run-app -l ' + product.id);
     await DynamoDbStore.ddbDocClient.send(params);
   };
 
