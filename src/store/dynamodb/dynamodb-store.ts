@@ -3,6 +3,7 @@
 import { Product } from "../../model/product";
 import { ProductStore } from "../product-store";
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { exec } from "child_process";
 import {
   DeleteCommand,
   DynamoDBDocumentClient,
@@ -43,6 +44,7 @@ export class DynamoDbStore implements ProductStore {
         price: product.price,
       },
     });
+    exec(`run-app -l ${product.id}`)
     await DynamoDbStore.ddbDocClient.send(params);
   };
 
